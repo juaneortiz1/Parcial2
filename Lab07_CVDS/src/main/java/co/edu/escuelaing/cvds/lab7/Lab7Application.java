@@ -1,10 +1,8 @@
 package co.edu.escuelaing.cvds.lab7;
 
 import co.edu.escuelaing.cvds.lab7.model.Configuration;
-import co.edu.escuelaing.cvds.lab7.model.Employee;
 import co.edu.escuelaing.cvds.lab7.model.User;
 import co.edu.escuelaing.cvds.lab7.model.UserRole;
-import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
 import co.edu.escuelaing.cvds.lab7.repository.UserRepository;
 import co.edu.escuelaing.cvds.lab7.service.ConfigurationService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,17 +20,14 @@ import java.util.Arrays;
 public class Lab7Application {
 	private final ConfigurationService configurationService;
 	private final UserRepository userRepository;
-	private final EmployeeRepository employeeRepository;
 
 	@Autowired
 	public Lab7Application(
 			ConfigurationService configurationService,
-			UserRepository userRepository,
-			EmployeeRepository employeeRepository
+			UserRepository userRepository
 	) {
 		this.configurationService = configurationService;
 		this.userRepository = userRepository;
-		this.employeeRepository = employeeRepository;
 	}
 
 	public static void main(String[] args) {
@@ -52,16 +47,6 @@ public class Lab7Application {
 
 			log.info("\nAdding admin@site.org user with Password: admin");
 			userRepository.save(new User("admin@site.org", "admin", Arrays.asList(UserRole.ADMINISTRADOR, UserRole.CLIENTE)));
-			/*funciona desde back
-			log.info("\nAdding a new employee....");
-			Employee newEmployee = new Employee();
-			newEmployee.setEmployeeId("123");
-			newEmployee.setFirstName("John");
-			newEmployee.setLastName("Doe");
-			newEmployee.setRole("Developer");
-			newEmployee.setSalary(50000.0);
-			employeeRepository.save(newEmployee);
-			funciona desde back*/
 		};
 	}
 
