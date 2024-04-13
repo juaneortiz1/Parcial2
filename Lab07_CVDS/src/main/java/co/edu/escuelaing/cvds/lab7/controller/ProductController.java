@@ -50,7 +50,7 @@ public class ProductController {
         productService.deleteProductById(id);
         return ResponseEntity.noContent().build();
     }
-   /* @PatchMapping("/{id}")
+   @PatchMapping("/{id}")
     public ResponseEntity<Product> partialUpdateProduct(@PathVariable int id, @RequestBody Product partialProduct) {
         Product updatedProduct = productService.partialUpdateProduct(id, partialProduct);
         if (updatedProduct != null) {
@@ -58,5 +58,5 @@ public class ProductController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }*/
+    }
 }

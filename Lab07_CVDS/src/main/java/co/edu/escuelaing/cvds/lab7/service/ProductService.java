@@ -38,7 +38,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    /*public Product partialUpdateProduct(int id, Product partialProduct) {
+    public Product partialUpdateProduct(int id, Product partialProduct) {
         Optional<Product> existingProduct = productRepository.getProductById(id);
         if (existingProduct.isPresent()) {
             Product updatedProduct = existingProduct.get();
@@ -52,8 +52,8 @@ public class ProductService {
             return productRepository.updateProduct(updatedProduct);
         } else {
             return null;
-        }*/
-    }
+        }
+
 
 
 }
